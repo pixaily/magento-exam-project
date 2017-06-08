@@ -1,43 +1,59 @@
 #--------------------------#
 # Magento Default Files    #
 #--------------------------#
-
+/.htaccess
 /app/etc/local.xml
+
+/downloader/.cache
+/downloader/*.cfg
+!/downloader/.htaccess
+
+/errors/local.xml
+
+/includes/*
+!/includes/.htaccess
 
 /media/*
 !/media/.htaccess
 
-!/media/customer
-/media/customer/*
-!/media/customer/.htaccess
+/pkginfo/*
+!/pkginfo/.htaccess
 
-!/media/dhl
-/media/dhl/*
-!/media/dhl/logo.jpg
+#!/media/customer
+#/media/customer/*
+#!/media/customer/.htaccess
 
-!/media/downloadable
-/media/downloadable/*
-!/media/downloadable/.htaccess
+#!/media/dhl
+#/media/dhl/*
+#!/media/dhl/logo.jpg
 
-!/media/xmlconnect
-/media/xmlconnect/*
+#!/media/downloadable
+#/media/downloadable/*
+#!/media/downloadable/.htaccess
 
-!/media/xmlconnect/custom
-/media/xmlconnect/custom/*
-!/media/xmlconnect/custom/ok.gif
+#!/media/xmlconnect
+#/media/xmlconnect/*
 
-!/media/xmlconnect/original
-/media/xmlconnect/original/*
-!/media/xmlconnect/original/ok.gif
+#!/media/xmlconnect/custom
+#/media/xmlconnect/custom/*
+#!/media/xmlconnect/custom/ok.gif
 
-!/media/xmlconnect/system
-/media/xmlconnect/system/*
-!/media/xmlconnect/system/ok.gif
+#!/media/xmlconnect/original
+#/media/xmlconnect/original/*
+#!/media/xmlconnect/original/ok.gif
+
+#!/media/xmlconnect/system
+#/media/xmlconnect/system/*
+#!/media/xmlconnect/system/ok.gif
 
 /var/*
 !/var/.htaccess
 
-!/var/package
-/var/package/*
-!/var/package/*.xml
+#!/var/package
+#/var/package/*
+#!/var/package/*.xml
+
+/sitemap.xml
+
+/vendor/*
 
