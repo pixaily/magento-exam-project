@@ -26,5 +26,5 @@
 
 /vendor/*
 
-.idea
-.idea/*
+.idea/
+/.idea/*

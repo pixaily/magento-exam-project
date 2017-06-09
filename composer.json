@@ -1,0 +1,17 @@
+{
+    "require": {
+        "magento-hackathon/magento-composer-installer": "3.0.*",
+        "inchoo/php7": "2.1.*"
+    },
+    "repositories": {
+        "firegento": {
+            "type": "composer",
+            "url": "https://packages.firegento.com"
+        }
+    },
+    "extra": {
+        "magento-root-dir": "./",
+        "magento-deploystrategy": "copy",
+        "magento-force": false
+    }
+}
