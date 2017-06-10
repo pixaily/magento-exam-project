@@ -1,0 +1,82 @@
+<h3><?php echo $this->__('Add Contestant')?></h3>
+
+<form action="<?php echo $this->getActionUrl() ?>" method="post">
+    <div class="contestant-field-wrap">
+        <label for="contestantFirstname"><?php echo $this->__('First name'); ?></label>
+        <div class="input-box">
+            <input type="text" id="contestantFirstname" name="contestant-firstname" class="input-text" title="<?php echo $this->__('First name'); ?>">
+        </div>
+        <br />
+
+        <label for="contestantLastname"><?php echo $this->__('Last name'); ?></label>
+        <div class="input-box">
+            <input type="text" id="contestantLastname" name="contestant-lastname" class="input-text" title="<?php echo $this->__('Last name'); ?>">
+        </div>
+        <br />
+
+        <label for="contestantDob"><?php echo $this->__('Date of birth'); ?></label>
+        <div class="input-box">
+            <input type="date" id="contestantDob" name="contestant-dob" class="input-text" title="<?php echo $this->__('Date of birth'); ?>">
+        </div>
+        <br />
+
+        <label for="contestantCountry"><?php echo $this->__('Country'); ?></label>
+        <div class="input-box">
+            <?php
+            $countries = Mage::getResourceModel('directory/country_collection')->loadData()->toOptionArray(false);
+            if (count($countries) > 0) :?>
+                <select id="contestantCountry" name="contestant-country" class="" title="<?php echo $this->__('Country'); ?>">
+                    <option value=""><?php echo $this->__('Select Country'); ?></option>
+                    <?php foreach($countries as $country) : ?>
+                        <option value="<?php echo $country['value']?>"><?php echo $country['label']?></option>
+                    <?php endforeach; ?>
+                </select>
+            <?php endif; ?>
+        </div>
+        <br />
+
+<!--        <label for="contestantContest">--><?php //echo $this->__('Contest'); ?><!--</label>-->
+<!--        <div class="input-box">-->
+            <?php
+//            $contests = Mage::getResourceModel('softuni_contest/contest')->loadData()->toOptionArray(false);
+            ?>
+<!--        </div>-->
+        <br />
+
+        <label for="contestantCity"><?php echo $this->__('City'); ?></label>
+        <div class="input-box">
+            <input type="text" id="contestantCity" name="contestant-city" class="input-text" title="<?php echo $this->__('City'); ?>">
+        </div>
+        <br />
+
+        <label for="contestantEmail"><?php echo $this->__('Email'); ?></label>
+        <div class="input-box">
+            <input type="text" id="contestantEmail" name="contestant-email" class="input-text" title="<?php echo $this->__('Email'); ?>">
+        </div>
+        <br />
+
+        <label for="contestantMessage"><?php echo $this->__('Message'); ?></label>
+        <div class="input-box">
+            <textarea id="contestantMessage" name="contestant-message" class="input-text" title="<?php echo $this->__('Message'); ?>"></textarea>
+        </div>
+        <br />
+
+        <button class="button"><?php echo $this->__('Submit'); ?></button>
+    </div>
+    <?php
+        // Contestant ID
+        // Contest ID
+        // Approved
+
+        // First name
+        // Last name
+        // Date of birth
+        // Country
+        // City
+        // Email
+        // Message
+
+        // Create at
+        // Update at
+    ?>
+</form>

@@ -634,6 +634,7 @@ abstract class Mage_Core_Controller_Varien_Action
      */
     protected function _initLayoutMessages($messagesStorage)
     {
+
         if (!is_array($messagesStorage)) {
             $messagesStorage = array($messagesStorage);
         }
