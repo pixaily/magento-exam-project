@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SoftUni_Contest>
+            <version>1.0.0</version>
+        </SoftUni_Contest>
+    </modules>
+
+    <global>
+        <helpers>
+            <softuni_contest>
+                <class>SoftUni_Contest_Helper</class>
+            </softuni_contest>
+        </helpers>
+
+        <blocks>
+            <softuni_contest>
+                <class>SoftUni_Contest_Block</class>
+            </softuni_contest>
+        </blocks>
+
+        <models>
+            <softuni_contest>
+                <class>SoftUni_Contest_Model</class>
+                <resourceModel>softuni_contest_resource</resourceModel>
+            </softuni_contest>
+            <softuni_contest_resource>
+                <class>SoftUni_Contest_Model_Resource</class>
+                <entities>
+                    <contest>
+                        <table>softuni_contest_contest</table>
+                    </contest>
+                    <contestant>
+                        <table>softuni_contest_contestant</table>
+                    </contestant>
+                </entities>
+            </softuni_contest_resource>
+        </models>
+
+        <resources>
+            <softuni_contest_setup>
+                <setup>
+                    <module>SoftUni_Contest</module>
+                </setup>
+            </softuni_contest_setup>
+        </resources>
+    </global>
+</config>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SoftUni_Contest>
+            <active>true</active>
+            <codePool>local</codePool>
+        </SoftUni_Contest>
+    </modules>
+</config>
