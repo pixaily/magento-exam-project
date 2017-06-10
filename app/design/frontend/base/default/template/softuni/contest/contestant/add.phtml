@@ -1,3 +1,5 @@
+<h1><?php echo $this->__('Contest title'); ?></h1>
+
 <h3><?php echo $this->__('Add Contestant')?></h3>
 
 <form action="<?php echo $this->getActionUrl() ?>" method="post">
@@ -32,14 +34,6 @@
                     <?php endforeach; ?>
                 </select>
             <?php endif; ?>
-        </div>
-        <br />
-
-        <label for="contestantContest"><?php echo $this->__('Contest'); ?></label>
-        <div class="input-box">
-            <?php
-//            $contests = Mage::getResourceModel('softuni_contest/contest')->loadData()->toOptionArray(false);
-            ?>
         </div>
         <br />
 
