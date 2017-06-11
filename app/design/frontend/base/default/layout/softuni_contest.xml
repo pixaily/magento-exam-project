@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-    <default>
+
+    <softuni_contest_contestant_add>
         <update handle="customer_account"/>
         <reference name="customer_account_navigation">
             <action method="addLink" translate="label" module="customer">
@@ -14,8 +15,6 @@
                 <label>List contest</label>
             </action>
         </reference>
-    </default>
-    <softuni_contest_contestant_add>
         <reference name="content">
             <block type="softuni_contest/contestant_add" name="softuni_contest.contestant.add" template="softuni/contest/contestant/add.phtml" />
         </reference>

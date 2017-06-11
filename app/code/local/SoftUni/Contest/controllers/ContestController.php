@@ -24,7 +24,7 @@ class SoftUni_Contest_ContestController extends Mage_Sales_Controller_Abstract
         $this->renderLayout();
 
         $data = Mage::getModel('softuni_contest/contest');
-        var_dump($data);
+
         die();
     }
 

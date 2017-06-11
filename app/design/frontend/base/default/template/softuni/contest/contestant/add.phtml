@@ -1,7 +1,7 @@
-<h1><?php echo $this->__('Contest title'); ?></h1>
+<?php $contest = $this->getContest(); ?>
 
+<h1><?php echo $contest['title'] ?></h1>
 <h3><?php echo $this->__('Add Contestant')?></h3>
-
 <form action="<?php echo $this->getActionUrl() ?>" method="post">
     <div class="contestant-field-wrap">
         <label for="contestantFirstname"><?php echo $this->__('First name'); ?></label>
@@ -55,22 +55,10 @@
         </div>
         <br />
 
+        <div class="input-box">
+            <input type="hidden" id="contestantContestId" name="contestant-contest-id" value="<?php echo $contest['id']?>" readonly>
+        </div>
+
         <button class="button"><?php echo $this->__('Submit'); ?></button>
     </div>
-    <?php
-        // Contestant ID
-        // Contest ID
-        // Approved
-
-        // First name
-        // Last name
-        // Date of birth
-        // Country
-        // City
-        // Email
-        // Message
-
-        // Create at
-        // Update at
-    ?>
 </form>

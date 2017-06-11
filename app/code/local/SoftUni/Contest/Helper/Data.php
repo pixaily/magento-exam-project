@@ -6,6 +6,6 @@
  * Time: 11:47
  */
 
-class SoftUno_Contest_Helper_Data extends Mage_Core_Helper_Abstract
+class SoftUni_Contest_Helper_Data extends Mage_Core_Helper_Abstract
 {
 }

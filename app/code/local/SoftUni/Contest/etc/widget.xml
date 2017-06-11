@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<widgets>
+    <softuni_contest_contestant type="softuni_contest/contestant_add" translate="name desctiption">
+        <name>Add Contestant</name>
+        <description>Add contestant to specific contest</description>
+        <parameters>
+            <contest translate="label">
+                <label>Contest</label>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <source_model>softuni_contest/adminhtml_widget_options</source_model>
+            </contest>
+            <template>
+                <visible>0</visible>
+                <value>softuni/contest/contestant/add.phtml</value>
+            </template>
+        </parameters>
+    </softuni_contest_contestant>
+</widgets>
