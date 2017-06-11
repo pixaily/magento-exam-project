@@ -1,2 +1,44 @@
-<h3><?php echo $this->__('List Contest'); ?></h3>
+<div>
+    <?php $contest = $this->getContest();
+    if(!empty($contest)) : ?>
+        <div>
+            <h1><?php echo $this->__($contest['title']) ?></h1>
+            <h4><?php echo $this->__('Contest description')?></h4>
+            <p><?php echo $this->__($contest['description'])?></p>
+        </div>
+        <br />
+        <div>
+            <?php $contestants = $this->getContestant();
+            if(!empty($contestants)) : ?>
+                <h4><?php echo $this->__('Contest approved contestant')?></h4>
+                <table class="data-table" id="checkout-review-table">
+                    <thead>
+                        <tr>
+                            <th><?php echo $this->__('First name') ?></th>
+                            <th><?php echo $this->__('Last name') ?></th>
+                            <th><?php echo $this->__('Country') ?></th>
+                            <th><?php echo $this->__('City') ?></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach($contestants as $contestant) : ?>
+                            <tr>
+                                <td><?php echo $contestant['firstname']?></td>
+                                <td><?php echo $contestant['lastname']?></td>
+                                <td><?php echo $contestant['country']?></td>
+                                <td><?php echo $contestant['city']?></td>
+                            </tr>
+                        <?php endforeach; ?>
 
+                    </tbody>
+                </table>
+            <?php else : ?>
+                <h4><?php echo $this->__('There is no approved contestant for this contest')?></h4>
+            <?php endif; ?>
+        </div>
+    <?php else : ?>
+
+        <h2><?php echo $this->__('There is no such active contest'); ?></h2>
+    <?php endif; ?>
+</div>

@@ -5,7 +5,6 @@ class SoftUni_Contest_Model_Adminhtml_Widget_Options
     public function toOptionArray()
     {
         $collection = $this->getContestsCollection();
-        $collection->getColumnValues('title');
 
         $arr = array(
             array(
@@ -20,6 +19,7 @@ class SoftUni_Contest_Model_Adminhtml_Widget_Options
                 'label' => Mage::helper('softuni_contest')->__($value->getTitle())
             ));
         }
+
         return $arr;
     }
 
