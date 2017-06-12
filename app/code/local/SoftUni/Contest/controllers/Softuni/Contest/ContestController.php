@@ -66,7 +66,7 @@ class SoftUni_Contest_Softuni_Contest_ContestController extends Mage_Adminhtml_C
             if (!$model->getId()) {
                 $model->setCreatedAt($curTime);
             }
-            
+
             $model->setUpdatedAt($curTime);
 
             // try to save it
@@ -97,6 +97,36 @@ class SoftUni_Contest_Softuni_Contest_ContestController extends Mage_Adminhtml_C
                 return;
             }
         }
+        $this->_redirect('*/*/index');
+    }
+
+    public function deleteAction()
+    {
+        // check if we know what should be deleted
+        if ($contestId = $this->getRequest()->getParam('contest_id')) {
+
+            try {
+                // init model and delete
+                $model = Mage::getModel('softuni_contest/contest');
+                $model->load($contestId);
+                $model->delete();
+                // display success message
+                Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('softuni_contest')->__('The contest has been deleted.'));
+                // go to grid
+                $this->_redirect('*/*/index');
+                return;
+
+            } catch (Exception $e) {
+                // display error message
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+                // go back to edit form
+                $this->_redirect('*/*/edit', array('contest_id' => $contestId));
+                return;
+            }
+        }
+        // display error message
+        Mage::getSingleton('adminhtml/session')->addError(Mage::helper('softuni_contest')->__('Unable to find a contest to delete.'));
+        // go to grid
         $this->_redirect('*/*/index');
     }
 
