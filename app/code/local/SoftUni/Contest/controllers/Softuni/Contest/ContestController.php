@@ -25,7 +25,7 @@ class SoftUni_Contest_Softuni_Contest_ContestController extends Mage_Adminhtml_C
             $model->load($contestId);
 
             if(!$model->getId()) {
-                Mage::getSingleton('adminhtml/session')->addError(Mage::helper('cms')->__('There is no such contest'));
+                Mage::getSingleton('adminhtml/session')->addError(Mage::helper('softuni_contest')->__('There is no such contest'));
                 $this->_redirect('*/*/');
                 return;
             }
@@ -60,7 +60,6 @@ class SoftUni_Contest_Softuni_Contest_ContestController extends Mage_Adminhtml_C
             }
 
             // init model and set data
-
             $model->setData($data);
 
             if (!$model->getId()) {

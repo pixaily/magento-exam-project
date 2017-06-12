@@ -1,12 +1,12 @@
 <?php
 
-class SoftUni_Contest_Block_Adminhtml_Contest_Grid extends Mage_Adminhtml_Block_Widget_Grid
+class SoftUni_Contest_Block_Adminhtml_Contestant_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
     public function __construct()
     {
         parent::__construct();
-        $this->setId('softuniContestGrid');
-        $this->setDefaultSort('contest_id');
+        $this->setId('softuniContestantGrid');
+        $this->setDefaultSort('contestant_id');
         $this->setDefaultDir('ASC');
     }
 
@@ -41,7 +41,7 @@ class SoftUni_Contest_Block_Adminhtml_Contest_Grid extends Mage_Adminhtml_Block_
 
         $this->addColumn('approved', array(
             'header'    => Mage::helper('softuni_contest')->__('Approved'),
-            'index'     => 'is_active',
+            'index'     => 'approved',
             'type'      => 'options',
             'options'   => array(
                 0 => Mage::helper('softuni_contest')->__('Not approved'),

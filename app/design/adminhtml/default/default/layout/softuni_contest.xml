@@ -14,11 +14,17 @@
         </reference>
     </adminhtml_softuni_contest_contest_edit>
 
-
-
     <adminhtml_softuni_contest_contestant_index>
         <reference name="content">
-            <block type="softuni_contest/adminthmlt_contest_contestant" name="softuni_contest.contest"/>
+            <block type="softuni_contest/adminhtml_contestant" name="softuni_contest.contestant"/>
         </reference>
     </adminhtml_softuni_contest_contestant_index>
+    <adminhtml_softuni_contest_contestant_new>
+        <update handle="adminhtml_softuni_contest_contestant_edit"/>
+    </adminhtml_softuni_contest_contestant_new>
+    <adminhtml_softuni_contest_contestant_edit>
+        <reference name="content">
+            <block type="softuni_contest/adminhtml_contestant_edit" name="softuni_contest.contestant.edit"/>
+        </reference>
+    </adminhtml_softuni_contest_contestant_edit>
 </layout>
