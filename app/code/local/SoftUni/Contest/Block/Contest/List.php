@@ -17,6 +17,7 @@ class SoftUni_Contest_Block_Contest_List extends Mage_Core_Block_Template
 
     public function getContest()
     {
+        // To try with $model->load($this->id)
         $contestCollection = Mage::getModel('softuni_contest/contest')->getCollection();
 
         $contestCollection->addFieldToSelect(array('contest_id', 'title', 'description', 'is_active'));

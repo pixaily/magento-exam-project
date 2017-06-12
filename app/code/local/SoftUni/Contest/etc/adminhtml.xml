@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<config>
+    <menu>
+        <SoftUni_Contest translate="title" module="softuni_contest">
+            <title>Softuni Contest</title>
+            <sort_order>50</sort_order>
+            <children>
+                <contests translate="title" module="softuni_contest">
+                    <title>Contests</title>
+                    <action>adminhtml/softuni_contest_contest</action>
+                    <sort_order>10</sort_order>
+                </contests>
+                <contestant translate="title" module="softuni_contest">
+                    <title>Contestants</title>
+                    <action>adminhtml/softuni_contest_contestant</action>
+                    <sort_order>20</sort_order>
+                </contestant>
+            </children>
+        </SoftUni_Contest>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <softuni_contest translate="title" module="softuni_contest">
+                        <title>Softuni Contest</title>
+                        <sort_order>50</sort_order>
+                        <children>
+                            <contests translate="title">
+                                <title>Contests</title>
+                                <sort_order>10</sort_order>
+                            </contests>
+                            <contestants translate="title">
+                                <title>Contestants</title>
+                                <sort_order>20</sort_order>
+                            </contestants>
+                        </children>
+                    </softuni_contest>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

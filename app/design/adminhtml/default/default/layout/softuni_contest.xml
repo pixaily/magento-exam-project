@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_softuni_contest_contest_index>
+        <reference name="content">
+            <block type="softuni_contest/adminhtml_contest" name="softuni_contest.contest"/>
+        </reference>
+    </adminhtml_softuni_contest_contest_index>
+    <adminhtml_softuni_contest_contest_new>
+        <update handle="adminhtml_softuni_contest_contest_edit" />
+    </adminhtml_softuni_contest_contest_new>
+    <adminhtml_softuni_contest_contest_edit>
+        <reference name="content">
+            <block type="softuni_contest/adminhtml_contest_edit" name="softuni_contest.contest.edit"/>
+        </reference>
+    </adminhtml_softuni_contest_contest_edit>
+
+
+
+    <adminhtml_softuni_contest_contestant_index>
+        <reference name="content">
+            <block type="softuni_contest/adminthmlt_contest_contestant" name="softuni_contest.contest"/>
+        </reference>
+    </adminhtml_softuni_contest_contestant_index>
+</layout>

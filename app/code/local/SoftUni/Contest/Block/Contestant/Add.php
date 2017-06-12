@@ -23,6 +23,7 @@ class SoftUni_Contest_Block_Contestant_Add
 
         $selectedContest = explode('-', $selectedContest);
 
+        // try with registry
         $this->contest['id'] = $selectedContest[0];
         $this->contest['title'] = $selectedContest[1];
 
