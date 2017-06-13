@@ -1,1 +1,18 @@
-<h1>hi</h1>
+<h1><?php echo $this->__('Statistics for Orders'); ?></h1>
+
+<h3>
+    <?php echo $this->__('All completed orders in the store are: ');
+    echo '<strong>' . $this->countAllCompletedOrders() . '<strong>'; ?>
+</h3>
+<h3>
+    <?php
+    echo $this->__('All orders in the store are: ');
+    echo '<strong>' . $this->countAllNotCompletedOrders() . '<strong>';
+    ?>
+</h3>
+<h3>
+    <?php
+    echo $this->__('All products in the store are: ');
+    echo '<strong>' . $this->countProducts() . '<strong>';
+    ?>
+</h3>

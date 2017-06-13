@@ -6,10 +6,9 @@ class SoftUni_Statistics_OrdersController extends Mage_Core_Controller_Front_Act
     {
         return Mage::getSingleton('customer/session');
     }
-    
+
     public function indexAction()
     {
-        var_dump(Mage::helper('softuni_statistics')->isSoftuniStatisticsOrdersEnabled());
         if(!$this->_getSession()->isLoggedIn()) {
             Mage::getSingleton('customer/session')->addError($this->__('Login is required'));
             $this->_redirect('customer/account');

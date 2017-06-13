@@ -18,24 +18,6 @@
                 <class>SoftUni_Statistics_Block</class>
             </softuni_statistics>
         </blocks>
-
-        <models>
-            <softuni_statistics>
-                <class>SoftUni_Statistics_Model</class>
-                <resourceModel>softuni_statistics_resource</resourceModel>
-            </softuni_statistics>
-            <softuni_statistics_resource>
-                <class>SoftUni_Statistics_Model_Resource</class>
-                <!--<entities>-->
-                    <!--<contest>-->
-                        <!--<table>softuni_statistics_contest</table>-->
-                    <!--</contest>-->
-                    <!--<contestant>-->
-                        <!--<table>softuni_statistics_contestant</table>-->
-                    <!--</contestant>-->
-                <!--</entities>-->
-            </softuni_statistics_resource>
-        </models>
     </global>
 
     <frontend>

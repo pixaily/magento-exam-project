@@ -29,21 +29,4 @@ class SoftUni_Contest_ContestantController extends Mage_Core_Controller_Front_Ac
 
         $this->_redirectReferer();
     }
-
-//    protected function _getSession()
-//    {
-//        return Mage::getSingleton('customer/session');
-//    }
-//
-//    public function addAction()
-//    {
-//        if(!$this->_getSession()->isLoggedIn()) {
-//            Mage::getSingleton('customer/session')->addError($this->__('Login is required'));
-//            $this->_redirect('customer/account');
-//            return;
-//        }
-//        $this->loadLayout();
-//        $this->renderLayout();
-//
-//    }
 }
