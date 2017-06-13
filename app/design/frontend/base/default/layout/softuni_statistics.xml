@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="customer">
+                <name>statistics-orders</name>
+                <path>softuni-statistics/orders/</path>
+                <label>Softuni Statistics</label>
+            </action>
+        </reference>
+    </customer_account>
+    <softuni_statistics_orders_index>
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="softuni_statistics/orders" name="softuni_statistics.orders" template="softuni/statistics/orders_stats.phtml" />
+        </reference>
+    </softuni_statistics_orders_index>
+</layout>
