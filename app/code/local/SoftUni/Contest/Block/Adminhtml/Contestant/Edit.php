@@ -37,7 +37,7 @@ class SoftUni_Contest_Block_Adminhtml_Contestant_Edit extends Mage_Adminhtml_Blo
     public function getHeaderText()
     {
         if(Mage::registry('softuni_contest_contestant')->getId()) {
-            return Mage::helper('softuni_contest')->__("Edit Contestant '%s'", $this->escapeHtml(Mage::registry('softuni_contest_contestant')->getTitle()));
+            return Mage::helper('softuni_contest')->__("Edit Contestant '%s'", $this->escapeHtml(Mage::registry('softuni_contest_contestant')->getFirstname() . ' ' . Mage::registry('softuni_contest_contestant')->getLastname()));
         } else {
             return Mage::helper('softuni_contest')->__('New Contestant');
         }

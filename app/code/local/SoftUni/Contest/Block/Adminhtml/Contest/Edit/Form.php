@@ -19,7 +19,7 @@ class SoftUni_Contest_Block_Adminhtml_Contest_Edit_Form extends Mage_Adminhtml_B
 
         $fieldset = $form->addFieldset('base_fieldset', array('legend'=>Mage::helper('softuni_contest')->__('General Information'), 'class' => 'fieldset-wide'));
 
-        if($model->getContestId()) {
+        if($model->getId()) {
             $fieldset->addField('contest_id', 'hidden', array(
                 'name' => 'contest_id'
             ));

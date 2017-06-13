@@ -21,13 +21,9 @@ class SoftUni_Contest_Block_Contestant_Add
             return $errorMsg;
         }
 
-        $selectedContest = explode('-', $selectedContest);
+        $contest = Mage::getModel('softuni_contest/contest')->load($selectedContest);
 
-        // try with registry
-        $this->contest['id'] = $selectedContest[0];
-        $this->contest['title'] = $selectedContest[1];
-
-        return $this->contest;
+        return $contest;
     }
 
     public function getActionUrl()

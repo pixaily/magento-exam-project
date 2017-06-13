@@ -12,6 +12,7 @@ class SoftUni_Contest_Block_Adminhtml_Contestant_Edit_Form extends Mage_Adminhtm
     protected function _prepareForm()
     {
         $model = Mage::registry('softuni_contest_contestant');
+        $allContests = Mage::registry('softuni_contest_all_contest');
 
         $form = new Varien_Data_Form(array('id' => 'edit_form', 'action' => $this->getUrl('adminhtml/softuni_contest_contestant/save'), 'method' => 'post'));
 
@@ -23,6 +24,23 @@ class SoftUni_Contest_Block_Adminhtml_Contestant_Edit_Form extends Mage_Adminhtm
             $fieldset->addField('contestant_id', 'hidden', array(
                 'name' => 'contestant_id'
             ));
+
+            $contestOptions = array();
+
+            foreach($allContests as $contest) {
+                $contestOptions[$contest['value']] = $contest['label'];
+            }
+
+            $fieldset->addField('contest_id', 'select', array(
+                'label'     => Mage::helper('softuni_contest')->__('Contest'),
+                'title'     => Mage::helper('softuni_contest')->__('Contest'),
+                'name'      => 'contest_id',
+                'required'  => true,
+                'options'   => $contestOptions
+            ));
+            if (!$model->getId()) {
+                $model->setData('approved', '0');
+            }
         };
 
         $fieldset->addField('firstname', 'text', array(
@@ -79,8 +97,8 @@ class SoftUni_Contest_Block_Adminhtml_Contestant_Edit_Form extends Mage_Adminhtm
             'name'      => 'approved',
             'required'  => true,
             'options'   => array(
+                '0' => Mage::helper('softuni_contest')->__('Not approved'),
                 '1' => Mage::helper('softuni_contest')->__('Approved'),
-                '0' => Mage::helper('softuni_contest')->__('Not approve'),
             ),
         ));
         if (!$model->getId()) {

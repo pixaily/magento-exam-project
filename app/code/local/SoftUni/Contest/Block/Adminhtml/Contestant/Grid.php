@@ -13,6 +13,7 @@ class SoftUni_Contest_Block_Adminhtml_Contestant_Grid extends Mage_Adminhtml_Blo
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('softuni_contest/contestant')->getCollection();
+//        $collection->getSelect()->join( array('contest'=> 'softuni_contest_contest'), 'contest.contest_id=main_table.contest_id', array('contest.title'));
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
@@ -25,7 +26,7 @@ class SoftUni_Contest_Block_Adminhtml_Contestant_Grid extends Mage_Adminhtml_Blo
         ));
 
         $this->addColumn('contest_id', array(
-            'header'    => Mage::helper('softuni_contest')->__('ID'),
+            'header'    => Mage::helper('softuni_contest')->__('Contest'),
             'index'     => 'contest_id',
         ));
 
@@ -54,7 +55,7 @@ class SoftUni_Contest_Block_Adminhtml_Contestant_Grid extends Mage_Adminhtml_Blo
             'index'     => 'dob'
         ));
 
-        // Should fix country
+        // TODO: fix country
         $this->addColumn('country', array(
             'header'    => Mage::helper('softuni_contest')->__('Country'),
             'index'     => 'country'

@@ -2,6 +2,12 @@
 
 class SoftUni_Contest_Softuni_Contest_ContestantController extends Mage_Adminhtml_Controller_Action
 {
+    public function _construct()
+    {
+        $contestsArr = Mage::getModel('softuni_contest/adminhtml_widget_options')->toOptionArray();
+        Mage::register('softuni_contest_all_contest', $contestsArr);
+    }
+
     public function indexAction()
     {
         $this->loadLayout();
@@ -17,27 +23,28 @@ class SoftUni_Contest_Softuni_Contest_ContestantController extends Mage_Adminhtm
     {
         $this->_title($this->__('Softuni Contestant'));
 
-        $contestantId = $this->getRequest()->getParam('contest_id');
-        $model = Mage::getModel('softuni_contest/contestant');
+        $contestantId = $this->getRequest()->getParam('contestant_id');
+        $contestantModel = Mage::getModel('softuni_contest/contestant');
 
         if($contestantId) {
-            $model->load($contestantId);
+            $contestantModel->load($contestantId);
 
-            if(!$model->getId()) {
+            if(!$contestantModel->getId()) {
                 Mage::getSingleton('adminhtml/session')->addError(Mage::helper('softuni_contest')->__('There is no such contest'));
-                $this->_redirect('*/*/');
+                $this->_redirectReferer();
                 return;
             }
         }
 
-        $this->_title($model->getId() ? $model->getTitle() : $this->__('New Contestant'));
+        $this->_title($contestantModel->getContestantId() ? $contestantModel->getFirstname() . ' ' .
+            $contestantModel->getLastname() : $this->__('New Contestant'));
 
         $data = Mage::getSingleton('adminhtml/session')->getFormData(true);
         if (!empty($data)) {
-            $model->setData($data);
+            $contestantModel->setData($data);
         }
 
-        Mage::register('softuni_contest_contestant', $model);
+        Mage::register('softuni_contest_contestant', $contestantModel);
 
         $this->loadLayout();
         $this->renderLayout();

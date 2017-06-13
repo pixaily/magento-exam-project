@@ -15,7 +15,7 @@ class SoftUni_Contest_Model_Adminhtml_Widget_Options
 
         foreach($collection as $value) {
             array_push($arr,array(
-                'value'  => '' . $value->getContestId() . '-' . $value->getTitle(),
+                'value'  => $value->getContestId(),
                 'label' => Mage::helper('softuni_contest')->__($value->getTitle())
             ));
         }

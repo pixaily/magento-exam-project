@@ -2,32 +2,35 @@
 
 <h1><?php echo $contest['title'] ?></h1>
 <h3><?php echo $this->__('Add Contestant')?></h3>
-<form action="<?php echo $this->getActionUrl() ?>" method="post">
+<form action="<?php echo $this->getActionUrl() ?>" method="post" id="contestAddContestant">
     <div class="contestant-field-wrap">
-        <label for="contestantFirstname"><?php echo $this->__('First name'); ?></label>
+        <label for="contestantFirstname" class="required"><?php echo $this->__('First name'); ?></label>
         <div class="input-box">
-            <input type="text" id="contestantFirstname" name="contestant-firstname" class="input-text" title="<?php echo $this->__('First name'); ?>">
+            <input type="text" id="contestantFirstname" name="contestant-firstname" class="input-text required-entry" title="<?php
+            echo $this->__('First name'); ?>">
         </div>
         <br />
 
-        <label for="contestantLastname"><?php echo $this->__('Last name'); ?></label>
+        <label for="contestantLastname" class="required"><?php echo $this->__('Last name'); ?></label>
         <div class="input-box">
-            <input type="text" id="contestantLastname" name="contestant-lastname" class="input-text" title="<?php echo $this->__('Last name'); ?>">
+            <input type="text" id="contestantLastname" name="contestant-lastname" class="input-text required-entry" title="<?php
+            echo $this->__('Last name'); ?>">
         </div>
         <br />
 
-        <label for="contestantDob"><?php echo $this->__('Date of birth'); ?></label>
+        <label for="contestantDob" class="required"><?php echo $this->__('Date of birth'); ?></label>
         <div class="input-box">
-            <input type="date" id="contestantDob" name="contestant-dob" class="input-text" title="<?php echo $this->__('Date of birth'); ?>">
+            <input type="date" id="contestantDob" name="contestant-dob" class="input-text required-entry" title="<?php echo
+            $this->__('Date of birth'); ?>">
         </div>
         <br />
 
-        <label for="contestantCountry"><?php echo $this->__('Country'); ?></label>
+        <label for="contestantCountry" class="required"><?php echo $this->__('Country'); ?></label>
         <div class="input-box">
             <?php
             $countries = Mage::getResourceModel('directory/country_collection')->loadData()->toOptionArray(false);
             if (count($countries) > 0) :?>
-                <select id="contestantCountry" name="contestant-country" class="" title="<?php echo $this->__('Country'); ?>">
+                <select id="contestantCountry" name="contestant-country" class="required-entry" title="<?php echo $this->__('Country'); ?>">
                     <option value=""><?php echo $this->__('Select Country'); ?></option>
                     <?php foreach($countries as $country) : ?>
                         <option value="<?php echo $country['value']?>"><?php echo $country['label']?></option>
@@ -37,21 +40,24 @@
         </div>
         <br />
 
-        <label for="contestantCity"><?php echo $this->__('City'); ?></label>
+        <label for="contestantCity" class="required"><?php echo $this->__('City'); ?></label>
         <div class="input-box">
-            <input type="text" id="contestantCity" name="contestant-city" class="input-text" title="<?php echo $this->__('City'); ?>">
+            <input type="text" id="contestantCity" name="contestant-city" class="input-text required-entry" title="<?php echo
+            $this->__('City'); ?>">
         </div>
         <br />
 
         <label for="contestantEmail"><?php echo $this->__('Email'); ?></label>
         <div class="input-box">
-            <input type="text" id="contestantEmail" name="contestant-email" class="input-text" title="<?php echo $this->__('Email'); ?>">
+            <input type="email" id="contestantEmail" name="contestant-email" class="input-text validate-email" title="<?php echo
+            $this->__('Email'); ?>">
         </div>
         <br />
 
-        <label for="contestantMessage"><?php echo $this->__('Message'); ?></label>
+        <label for="contestantMessage" class="required"><?php echo $this->__('Message'); ?></label>
         <div class="input-box">
-            <textarea id="contestantMessage" name="contestant-message" class="input-text" title="<?php echo $this->__('Message'); ?>"></textarea>
+            <textarea id="contestantMessage" name="contestant-message" class="input-text required-entry" title="<?php echo
+            $this->__('Message'); ?>"></textarea>
         </div>
         <br />
 
@@ -59,6 +65,11 @@
             <input type="hidden" id="contestantContestId" name="contestant-contest-id" value="<?php echo $contest['id']?>" readonly>
         </div>
 
-        <button class="button"><?php echo $this->__('Submit'); ?></button>
+        <button type="submit" class="button"><?php echo $this->__('Submit'); ?></button>
     </div>
 </form>
+<script>
+    // < ![CDATA[
+        var addContestant = new VarienForm('contestAddContestant');
+    // ]]>
+</script>
