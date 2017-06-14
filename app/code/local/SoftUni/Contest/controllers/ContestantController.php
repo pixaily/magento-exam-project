@@ -29,4 +29,9 @@ class SoftUni_Contest_ContestantController extends Mage_Core_Controller_Front_Ac
 
         $this->_redirectReferer();
     }
+
+    public function getActionUrl()
+   {
+        return $this->getUrl('softuni-contest/contestant/add');
+        }
 }

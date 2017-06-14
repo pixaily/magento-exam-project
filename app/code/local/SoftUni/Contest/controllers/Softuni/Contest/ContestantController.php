@@ -44,7 +44,7 @@ class SoftUni_Contest_Softuni_Contest_ContestantController extends Mage_Adminhtm
             $contestantModel->setData($data);
         }
 
-        Mage::register('softuni_contest_contestant', $contestantModel);
+        Mage::register  ('softuni_contest_contestant', $contestantModel);
 
         $this->loadLayout();
         $this->renderLayout();

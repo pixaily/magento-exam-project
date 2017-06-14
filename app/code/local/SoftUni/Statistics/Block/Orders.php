@@ -34,6 +34,10 @@ class SoftUni_Statistics_Block_Orders extends Mage_Core_Block_Template
     {
         $productsCollection = Mage::getModel('catalog/product')->getCollection();
 
+        $productsCollection->addAttributeToFilter('status', array(
+           'eq' => '1'
+        ));
+
         return $productsCollection;
     }
 

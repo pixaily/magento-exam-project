@@ -13,7 +13,6 @@ class SoftUni_Contest_Block_Adminhtml_Contestant_Grid extends Mage_Adminhtml_Blo
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('softuni_contest/contestant')->getCollection();
-//        $collection->getSelect()->join( array('contest'=> 'softuni_contest_contest'), 'contest.contest_id=main_table.contest_id', array('contest.title'));
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }

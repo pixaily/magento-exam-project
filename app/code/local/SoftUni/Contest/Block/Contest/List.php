@@ -63,7 +63,7 @@ class SoftUni_Contest_Block_Contest_List extends Mage_Core_Block_Template
             array_push($contestantArr, array(
                 'firstname' => $value->getFirstname(),
                 'lastname'  => str_split($value->getLastname(), 1)[0],
-                'country'   => Mage::getModel('directory/country')->loadByCode($value->getCountry())->getName(),
+                'country'   => $value->getCountry(),
                 'city'      => $value->getCity(),
                 )
             );
