@@ -10,18 +10,35 @@ class SoftUni_Contest_Block_Contestant_Add
     extends Mage_Core_Block_Template
     implements Mage_Widget_Block_Interface
 {
-    protected $contest = array();
+    private function getContestId() {
+        $selectedContestId = $this->getRequest()->getParam('contest_id');
+
+        if(!$selectedContestId) {
+            $selectedContestId = $this->getData('contest');
+
+            if(!$selectedContestId) {
+                return false;
+            }
+        }
+
+        return $selectedContestId;
+    }
 
     public function getContest()
     {
         $errorMsg = $this->__('There is no such active contest');
-        $selectedContest = $this->getData('contest');
+        $contestModel = Mage::getModel('softuni_contest/contest');
+        $selectedContestId = $this->getContestId();
 
-        if (empty($selectedContest)) {
+        if(!$selectedContestId) {
             return $errorMsg;
         }
 
-        $contest = Mage::getModel('softuni_contest/contest')->load($selectedContest);
+        $contest = $contestModel->load($selectedContestId);
+
+        if (empty($contest->getTitle()) && !$contest->getIsActive()) {
+            return $errorMsg;
+        }
 
         return $contest;
     }
